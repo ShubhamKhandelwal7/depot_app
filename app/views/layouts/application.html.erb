@@ -27,6 +27,14 @@
       <%time = Time.now%>
         <li><a><%= time.strftime("%d/%m/%Y") %> <%= time.strftime("%I:%M %p") %></a>
         </li>
+
+         <%
+=begin%>
+<li> <a>No of Visits: </a> 
+      <a><%= StoreController.new.visit_counter%></a> </li>  
+<%
+=end%>
+
       </ul>
     </nav>
     <main class='<%= controller.controller_name %>'>
