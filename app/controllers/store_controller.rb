@@ -1,5 +1,7 @@
 class StoreController < ApplicationController
   # attr_accessor :visit_counter
+  include CurrentCart
+  before_action :set_cart
 
   # @@visit_counter ||= 0
   def index

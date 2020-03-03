@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     has_many :line_items
+    has_many :orders, through: :line_items
     before_destroy :ensure_not_referenced_by_any_line_item
 
     validates :title, :description, :image_url, presence: true
@@ -7,8 +8,8 @@ class Product < ApplicationRecord
     validates :title, uniqueness: true
     validates :image_url, allow_blank: true, format: {
         with:
-        %r{\.(gif|jpg|png)\z}i,
-        message: 'must be a URL for GIF, JPG or PNG image.'
+        %r{\.(gif|jpg|png|jpeg)\z}i,
+        message: 'must be a URL for GIF, JPG, JPEG or PNG image.'
         }
     validates :title, length: {minimum: 10}
 
