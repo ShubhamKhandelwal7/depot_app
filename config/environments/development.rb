@@ -64,4 +64,6 @@ Rails.application.configure do
   config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.delivery_method = :smtp
+
+  config.active_storage.service = :local
 end

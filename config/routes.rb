@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get :who_bought, on: :member
   end
   resources :products
+  resources :support_requests, only: [ :index, :update ]
 
   scope '(:locale)' do
     resources :orders
