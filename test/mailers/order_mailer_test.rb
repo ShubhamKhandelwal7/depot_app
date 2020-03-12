@@ -7,6 +7,7 @@ class OrderMailerTest < ActionMailer::TestCase
     assert_equal ["dave@example.org"], mail.to
     assert_equal ["depot@example.com"], mail.from
     assert_match /1 x Programming Ruby 1.9/, mail.body.encoded
+    # p mail.body.encoded
   end
 
   test "shipped" do
@@ -16,5 +17,6 @@ class OrderMailerTest < ActionMailer::TestCase
     assert_equal ["depot@example.com"], mail.from
     assert_match /<td[^>]*>1<\/td>\s*<td>Programming Ruby 1.9<\/td>/,
       mail.body.encoded
+      p mail.body.encoded
   end
 end
